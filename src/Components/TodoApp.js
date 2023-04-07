@@ -1,4 +1,5 @@
 import React from 'react'
+import Form from './Form'
 import TodoList from './TodoList'
 
 const TodoApp = () => {
@@ -15,11 +16,12 @@ const TodoApp = () => {
         {
             id:3,
             todo:'sleep'
-        }
+        },
     ]
 
   return (
     <div>
+        <Form/>
         <TodoList todos={dummyArray}/>
     </div>
   )
