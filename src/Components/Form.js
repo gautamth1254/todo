@@ -14,12 +14,12 @@ const Form = () => {
     let formHandler = (e) => {
         e.preventDefault();
         console.log(input);
-        // setInput('')
+        setInput('')
     }
 
   return (
     <form onSubmit={formHandler}>
-        <input onChange={inputHandler} type='text' name="" id=""/>
+        <input onChange={inputHandler} type='text'  value={input} name="" id=""/>
     </form>
   )
 }
