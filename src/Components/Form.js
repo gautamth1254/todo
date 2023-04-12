@@ -2,7 +2,7 @@ import React from 'react'
 import {useState} from 'react'
 
 
-const Form = () => {
+const Form = (props) => {
 
     const [input, setInput] = useState('')
 
@@ -12,8 +12,13 @@ const Form = () => {
     }
 
     let formHandler = (e) => {
-        e.preventDefault();
-        console.log(input);
+        e.preventDefault(); // dont refresh when form submit   
+        let newTodo = {
+          id : props.todos.length +1,
+          todo: input
+        }
+        props.addTodo(newTodo);     
+        // console.log(input);
         setInput('')
     }
 

@@ -1,6 +1,7 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Form from './Form'
 import TodoList from './TodoList'
+
 
 const TodoApp = () => {
 
@@ -19,10 +20,30 @@ const TodoApp = () => {
         },
     ]
 
+    const [todos, setTodos] = useState(dummyArray);
+
+    let addTodo = (todo) => {
+        setTodos([...todos, todo]);
+    }
+    let deleteTodo = (id) => {
+        
+        // filter accept callback function
+
+        let newTodo = todos.filter((todo) =>{
+            if(todo.id===id){
+                return false
+            }
+            return true
+        })
+
+        setTodos(newTodo);
+    }
+
   return (
     <div>
-        <Form/>
-        <TodoList todos={dummyArray}/>
+        
+        <Form addTodo={addTodo} todos={todos} ></Form>
+        <TodoList todos={todos} deleteTodo={deleteTodo}/>
     </div>
   )
 }
