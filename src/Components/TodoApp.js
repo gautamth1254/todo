@@ -25,9 +25,10 @@ const TodoApp = () => {
     let addTodo = (todo) => {
         setTodos([...todos, todo]);
     }
+    // filter accept callback function
     let deleteTodo = (id) => {
         
-        // filter accept callback function
+        
 
         let newTodo = todos.filter((todo) =>{
             if(todo.id===id){

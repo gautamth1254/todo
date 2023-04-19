@@ -14,7 +14,7 @@ const Form = (props) => {
     let formHandler = (e) => {
         e.preventDefault(); // dont refresh when form submit   
         let newTodo = {
-          id : props.todos.length +1,
+          id : props.todos.length + 1,
           todo: input
         }
         props.addTodo(newTodo);     
